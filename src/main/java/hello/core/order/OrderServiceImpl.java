@@ -22,9 +22,9 @@ public class OrderServiceImpl implements OrderService{
     * 해당 Qualifier 없을 경우 -> Bean 검색 -> 그도 없을 경우 NoSuchBeanDefinitionException 반환.
     * */
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy rateDiscountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
-        this.discountPolicy = rateDiscountPolicy;
+        this.discountPolicy = discountPolicy;
     }
 
     @Override
